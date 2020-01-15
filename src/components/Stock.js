@@ -1,15 +1,16 @@
 import React from 'react'
 
-const Stock = () => (
+const Stock = (props) => (
+      // let {id, ticker, name, type, price} = props
   <div>
 
     <div className="card">
-      <div className="card-body">
+      <div className="card-body" onClick={props.removePortfolioStock ? () => props.removePortfolioStock(props.id) : () => props.addPortfolioStock(props.id, props.name, props.ticker, props.price)}>
         <h5 className="card-title">{
-            //Company Name
+            props.name
           }</h5>
         <p className="card-text">{
-            //ticker: stock price
+            props.ticker + ': ' + props.price
           }</p>
       </div>
     </div>
